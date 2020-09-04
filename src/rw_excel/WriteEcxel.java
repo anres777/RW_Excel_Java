@@ -25,6 +25,14 @@ import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.util.CellRangeAddress;
 
 public class WriteEcxel {
+    //*** Estilos posibles ***
+    //Se puede asignar algunos a una celda enviados como un arreglo de string al momento de crear la celda
+//   {    "decimal", "fecha",
+//        "negrita", "cursiva", "centrar", "alinear_derecha",
+//        "t_12", "t_14", 
+//        "t_blanco", "t_rojo", "t_verde",
+//        "cafe", "rojo", "verde", "azul", "gris25%", "gris40%", "gris80%", 
+//        "bordes" }
     
     public XSSFWorkbook libro = new XSSFWorkbook();
     public XSSFSheet hoja;
@@ -32,17 +40,6 @@ public class WriteEcxel {
     ArrayList<Integer> filas = new  ArrayList<Integer>();       //lista de filas que contiene el libro, sirve para la creacion de celdas
     ArrayList<Integer> columnas = new  ArrayList<Integer>();    //Lista de columnas que posee el libro, solo sirve para auto- ajustar
     
-    //*** para analizar ***
-    //Estilos posibles a asignar a una celda
-    String[] estilos = {
-        "decimal", "fecha",
-        "negrita", "cursiva", "centrar", "alinear_derecha",
-        "t_12", "t_14", 
-        "t_blanco", "t_rojo", "t_verde",
-        "cafe", "rojo", "verde", "azul", "gris25%", "gris40%", "gris80%", 
-        "bordes"
-    };
-
     //para conversion de cadenas a fechas
     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
     
